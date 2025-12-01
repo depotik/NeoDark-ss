@@ -8,7 +8,7 @@
 </p>
 
 <p align="center">
-  <img src="NeoDark.jpg" width="200" height="200">
+  <img src="NeoDark.jpg" width="400" height="300">
 </p>
 
 ## 🌐 Язык/Language
