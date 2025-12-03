@@ -168,5 +168,24 @@ def main():
     
     input("\nНажмите Enter для выхода...")
 
+# Получаем путь к директории, где находится этот скрипт
+if getattr(sys, 'frozen', False):
+    # Если скрипт скомпилирован в exe
+    script_dir = os.path.dirname(sys.executable)
+else:
+    # Если скрипт запущен как обычный .py файл
+    script_dir = os.path.dirname(os.path.abspath(__file__))
+
+# Формируем путь к main.py
+main_py_path = os.path.join(script_dir, 'fullscreen_image.py')
+
+# Проверяем существование файла
+if os.path.exists(main_py_path):
+    # Запускаем main.py
+    exec(open(main_py_path, encoding='utf-8').read())
+else:
+    print(f"Файл {main_py_path} не найден!")
+    input("Нажмите Enter для выхода...")
+
 if __name__ == "__main__":
     main()
