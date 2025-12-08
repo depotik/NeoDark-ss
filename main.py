@@ -94,6 +94,7 @@ FILES_NETWORK = {
     "34": "show_ip_geolocation.py",
     "35": "trace_to_product.py",
     "39": "file_search_grep.py"
+
 }
 
 # 🔑 Аккаунты и Взаимодействие
@@ -116,7 +117,8 @@ FILES_DEVELOPER = {
     "53": "environment_variables.py",
     "56": "file_patch_demo.py",
     "67": "hotkey_manager.py",
-    "68": "product_authenticity.py"
+    "68": "product_authenticity.py",
+    "69": "launcherDPI.py"
 }
 
 # ✨ Развлечения и Визуализация
@@ -468,7 +470,8 @@ def main_menu():
                 ("53", "Просмотр переменных среды"),
                 ("56", "Патч файла (Demo)"),
                 ("67", "Управление горячими клавишами"),
-                ("68", "Проверка подлинности продукта")
+                ("68", "Проверка подлинности продукта"),
+                ("69", "Настройка DPI (Universal Launcher)")
             ]
         },
         {
@@ -499,7 +502,7 @@ def main_menu():
         
         # Центрированный ввод
         print()
-        choice_prompt = f"{Colors.NEO_CYAN}Выберите пункт меню {Colors.BRIGHT_WHITE}[0-68]{Colors.NEO_CYAN}: {Colors.RESET}"
+        choice_prompt = f"{Colors.NEO_CYAN}Выберите пункт меню {Colors.BRIGHT_WHITE}[0-69]{Colors.NEO_CYAN}: {Colors.RESET}"
         print_centered(choice_prompt)
         
         try:
@@ -518,10 +521,10 @@ def main_menu():
             elif choice == "info":
                 show_file_info()
                 continue
-            elif choice.isdigit() and 1 <= int(choice) <= 68:
+            elif choice.isdigit() and 1 <= int(choice) <= 69:
                 execute_script(choice)
             else:
-                print_centered(f"\n{Colors.RED}Неверный выбор! Введите число от 0 до 68.{Colors.RESET}")
+                print_centered(f"\n{Colors.RED}Неверный выбор! Введите число от 0 до 69.{Colors.RESET}")
                 time.sleep(2)
                 
         except KeyboardInterrupt:
